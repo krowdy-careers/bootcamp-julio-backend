@@ -28,6 +28,7 @@
     "@types/restify-errors": "^4.3.4",
     "@types/url-parse": "^1.4.8",
     "@types/uuid": "^8.3.4",
+    "@types/uuid4": "^2.0.0",
     "aws-sdk": "^2.1140.0",
     "axios": "^0.27.2",
     "better-queue": "^3.8.10",
@@ -43,6 +44,7 @@
     "restify-errors": "^8.0.2",
     "restify-router": "^0.6.2",
     "url-parse": "^1.5.10",
-    "uuid": "^8.3.2"
+    "uuid": "^8.3.2",
+    "uuid4": "^2.0.3"
   }
 }

@@ -8,7 +8,7 @@ export const VideoStatusProcess = {
 }
 
 const TiktokVideoSchemas = new Schema({
-    tiktokId: {type: Schema.Types.ObjectId, ref: 'TikTok'}
+    tiktokId: {type: Schema.Types.ObjectId, ref: 'TikTok'},
 })
 
 const VideoReelSchema = new Schema({

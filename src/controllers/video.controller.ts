@@ -1,6 +1,13 @@
-import { VideoStatusProcess } from "../datalayers/models/mongodb/VideoReel.model"
-
+import VideoReelModel, { VideoStatusProcess } from "../datalayers/models/mongodb/VideoReel.model"
+import SonyVegasController from './sonyvegas.controller'
 class VideoController {
+    async testingFfmpeg() {
+        try {
+            await SonyVegasController.ffmpeg({})
+        } catch (error) {
+            throw error
+        }
+    }
     async executeProcessToBuildReel() {
         const videoId: any = null
 
@@ -38,6 +45,34 @@ class VideoController {
 
     private async createVideoReel() {
 
+    }
+
+    async updateData() {
+        let dateUpdate=  new Date()
+        const updateData = await VideoReelModel.findOneAndUpdate({
+            _id: "62f302a0f9027c96dda81aa6"
+        }, {
+            $set: {
+                srcLink: 'https://google.com',
+                updatedAt: dateUpdate
+            }
+        })
+    }
+
+    async createData() {
+        let dateUpdate=  new Date()
+        const updateData = await VideoReelModel.insertMany([{
+            srcLink: 'https://google.com',
+            createdAt: new Date()
+        }])
+    }
+
+    async cutVideo(nameVideo: string, startTime: string, endTime: string, numberCpusAvailables: number) {
+        try {
+            await SonyVegasController.cutVideo(nameVideo, startTime, endTime, numberCpusAvailables)
+        } catch (error) {
+            throw error
+        }
     }
 }
 
